@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>birch-builder-3</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Ubuntu+Mono" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+    <link href="main.css" rel="stylesheet">
+    <script src="./generatedFiles/megaComponentObject.js"></script><!-- must be loaded before main -->
+    <script src="./jsCode/util.js"></script>
+    <script src="./vendor/Sortable.min.js"></script>
+    <link rel="stylesheet" href="vendor/tooltipster/tooltipster.bundle.min.css"/>
+    <!-- <script src="./jsCode/dndDragAndDrop.js"></script> -->
+    <!-- <script src="./jsCode/main.js"></script> -->
+    <script src="./jsCode/subComponents.js"></script>
+    
+    
+</head>
+<body>
+    <div class="page">
+        <section class="top">
+            <h1>Dist: Main: 
+                mode:<span id="displayMainMode" style="color:orange;">-</span> 
+                selectedCompId:<span id="displayMainEditCompId" style="color:orange;">-</span> 
+                selectedTemplateId:<span id="displayMainEditTemplateId" style="color:orange;">-</span> 
+            </h1>
+            <p>This is the index page in the dist folder3.</p>
+        </section><!-- /top -->
+
+        <section class="bottom">
+            <section class="left">
+
+                <section id="leftComponentView">
+                    <div id="leftContainersInsertionPoint"></div>
+
+                    <!-- <div class="addComponentContainer" onclick="userAddComp('template1')">
+                        <div class="addComponentLabel">template1</div>
+                        <div class="addComponentPreview avoid-clicks">
+                            <p class="guy">This is template1.  The <a href="#">best</a></p>
+                        </div>
+                    </div>
+
+                    <div class="addComponentContainer" onclick="userAddComp('template2')">
+                        <div class="addComponentLabel">template2</div>
+                        <div class="addComponentPreview avoid-clicks">
+                            <p class="guy">This is template2.  The <a href="#">average</a></p>
+                        </div>
+                    </div> -->
+                </section> <!-- /leftComponentView -->
+
+                <section id="leftEditView" class="leftEditView hideme">
+                    <p>Welcome to the edit view</p>
+                    <!-- <div>guidBeingEdited: <input id="guidBeingEdited"></div> -->
+
+                    <section id="edit_template1" class="editSection edit_template1 hideme" data-templateId="template1">
+                        <div>template1</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="template2_deleteBtn" onclick="userEditDelete()" type="button">Delete &rsaquo;</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="template1_backgroundColor" onblur="userAutoSaveMe('template1');" data-savetarget="template1" />
+                                    <button type="button" id="template1_backgroundColorCP" class="cpTooltip" value="template1_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div>textText:</div>
+                                <input class="editInput" id="template1_testText" onblur="userAutoSaveMe('template1');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="template1_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                        
+                    </section>
+
+
+                    <section id="edit_template2" class="editSection edit_template2 hideme" data-templateId="template2">
+                        <div>template2</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="template2_deleteBtn" onclick="userEditDelete()" type="button">Delete &rsaquo;</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="template2_backgroundColor" onblur="userAutoSaveMe('template2');" data-savetarget="template2" />
+                                    <button type="button" id="template2_backgroundColorCP" class="cpTooltip" value="template2_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div>textText:</div>
+                                <input class="editInput" id="template2_testText" onblur="userAutoSaveMe('template2');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="template2_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                        
+                    </section>
+
+
+                    <section id="edit_template3" class="editSection edit_template3 hideme" data-templateId="template3">
+                        <div>template3</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="template3_deleteBtn" onclick="userEditDelete()" type="button">Delete &rsaquo;</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="template3_backgroundColor" onblur="userAutoSaveMe('template3');" data-savetarget="template3" />
+                                    <button type="button" id="template3_backgroundColorCP" class="cpTooltip" value="template3_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div>textText:</div>
+                                <input class="editInput" id="template3_testText" onblur="userAutoSaveMe('template2');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="template3_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                        
+                    </section>
+
+
+                    <section id="edit_template4" class="editSection edit_template4 hideme" data-templateId="template4">
+                        <div>template4</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="template4_deleteBtn" onclick="userEditDelete()" type="button">Delete &rsaquo;</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="template4_backgroundColor" onblur="userAutoSaveMe('template4');" data-savetarget="template4" />
+                                    <button type="button" id="template4_backgroundColorCP" class="cpTooltip" value="template4_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div>textText:</div>
+                                <input class="editInput" id="template4_testText" onblur="userAutoSaveMe('template4');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="template4_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                        
+                    </section>
+
+
+                    <section id="edit_c090" class="editSection edit_c090 hideme" data-templateId="c090">
+                        <div>c090</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c090_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>spacerTop:
+                                <input type="number" min="0" class="editInput" id="c090_spacerTop" onblur="userBlankTo0(this);userAutoSaveMe('c090');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c090_backgroundColor" onblur="userAutoSaveMe('c090');" data-savetarget="c090" />
+                                    <button type="button" id="c090_backgroundColorCP" class="cpTooltip" value="c090_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>linkColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c090_linkColor" onblur="userAutoSaveMe('c090');" data-savetarget="c090" />
+                                    <button type="button" id="c090_linkColorCP" class="cpTooltip" value="c090_linkColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>linkUrl:<input class="editInput" id="c090_linkUrl" onblur="userAutoSaveMe('c090');" /></label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>linkText:<input class="editInput" id="c090_linkText" onblur="userAutoSaveMe('c090');" /></label>
+                        </div>
+                        <div class="inputGroup">
+                            <div class="label">linkAlign:
+                                <div class="alignRadioFlex">
+                                    <label><input type="radio" name="c090_linkAlignRadio" value="left" data-target="c090_linkAlign" onclick="userSetRadio(this)">left</label>
+                                    <label><input type="radio" name="c090_linkAlignRadio" value="center" data-target="c090_linkAlign" onclick="userSetRadio(this)" checked="checked">center</label>
+                                    <label><input type="radio" name="c090_linkAlignRadio" value="right" data-target="c090_linkAlign" onclick="userSetRadio(this)">right</label>
+                                </div>
+                                <input class="editInput hideme" id="c090_linkAlign" onblur="userAutoSaveMe('c090');" />
+                            </div>
+                        </div>
+                        <div class="inputGroup">
+                            <label>spacerBottom:
+                                <input type="number" min="0" class="editInput" id="c090_spacerBottom" onblur="userBlankTo0(this);userAutoSaveMe('c090');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c090_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c090 -->
+
+
+                    <section id="edit_c100" class="editSection edit_c100 hideme" data-templateId="c100">
+                        <div>c100</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c100_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>preset:
+                                <select class="editSelect" id="c100_presetDD" onchange="userHandlePreset('c100');">
+                                    <option value="unum_logo-white_bg-color">unum_logo-white_bg-color</option>
+                                    <option value="colonial_logo-white_bg-color">colonial_logo-white_bg-color</option>
+                                    <option value="unum_logo-color_bg-white">unum_logo-color_bg-white</option>
+                                    <option value="colonial_logo-color_bg-white">colonial_logo-color_bg-white</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup hideme">
+                            <label>backgroundColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c100_backgroundColor" onblur="userAutoSaveMe('c100');" data-savetarget="c100" />
+                                    <button type="button" id="c100_backgroundColorCP" class="cpTooltip" value="c100_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- <div class="inputGroup hideme">
+                            <label>logo*:
+                                <select class="editSelect" id="c100_logoDD" onchange="userAutoSaveMe('c100');">
+                                    <option value="unum_logo-white_bg-color">unum_logo-white_bg-color</option>
+                                    <option value="colonial_logo-white_bg-color">colonial_logo-white_bg-color</option>
+                                    <option value="unum_logo-color_bg-white">unum_logo-color_bg-white</option>
+                                    <option value="colonial_logo-color_bg-white">colonial_logo-color_bg-white</option>
+                                </select>
+                            </label>
+                        </div> -->
+                        <div class="inputGroup hideme">
+                            <label>logoUrl*:
+                                <input class="editInput" id="c100_logoUrl" onblur="userAutoSaveMe('c100');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoSrc*:
+                                <input class="editInput" id="c100_logoSrc" onblur="userAutoSaveMe('c100');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltText*:
+                                <input class="editInput" id="c100_logoAltText" onblur="userAutoSaveMe('c100');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c100_logoAltTextColor" onblur="userAutoSaveMe('c100');" data-savetarget="c100" />
+                                    <button type="button" id="c100_logoAltTextColorCP" class="cpTooltip" value="c100_logoAltTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>ctaTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c100_ctaTextColor" onblur="userAutoSaveMe('c100');" data-savetarget="c100" />
+                                    <button type="button" id="c100_ctaTextColorCP" class="cpTooltip" value="c100_ctaTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaUrl:</div> 
+                                    <div>leave blank to make link plain text</div>
+                                </div>
+                                <input class="editInput" id="c100_ctaUrl" onblur="userAutoSaveMe('c100');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaText:</div> 
+                                    <div>leave blank to remove cta</div>
+                                </div>
+                                <input class="editInput" id="c100_ctaText" onblur="userAutoSaveMe('c100');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c100_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c100 -->
+
+
+                    <section id="edit_c101" class="editSection edit_c101 hideme" data-templateId="c101">
+                        <div>c101</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c101_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>preset:
+                                <select class="editSelect" id="c101_presetDD" onchange="userHandlePreset('c101');">
+                                    <option value="unum_logo-white_bg-color">unum_logo-white_bg-color</option>
+                                    <option value="colonial_logo-white_bg-color">colonial_logo-white_bg-color</option>
+                                    <option value="unum_logo-color_bg-white">unum_logo-color_bg-white</option>
+                                    <option value="colonial_logo-color_bg-white">colonial_logo-color_bg-white</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup hideme">
+                            <label>backgroundColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c101_backgroundColor" onblur="userAutoSaveMe('c101');" data-savetarget="c101" />
+                                    <button type="button" id="c101_backgroundColorCP" class="cpTooltip" value="c101_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoUrl*:
+                                <input class="editInput" id="c101_logoUrl" onblur="userAutoSaveMe('c101');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoSrc*:
+                                <input class="editInput" id="c101_logoSrc" onblur="userAutoSaveMe('c101');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltText*:
+                                <input class="editInput" id="c101_logoAltText" onblur="userAutoSaveMe('c101');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c101_logoAltTextColor" onblur="userAutoSaveMe('c101');" data-savetarget="c101" />
+                                    <button type="button" id="c101_logoAltTextColorCP" class="cpTooltip" value="c101_logoAltTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>headerbarColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c101_headerbarColor" onblur="userAutoSaveMe('c101');" data-savetarget="c101" />
+                                    <button type="button" id="c101_headerbarColorCP" class="cpTooltip" value="c101_headerbarColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>descTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c101_descTextColor" onblur="userAutoSaveMe('c101');" data-savetarget="c101" />
+                                    <button type="button" id="c101_descTextColorCP" class="cpTooltip" value="c101_descTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup">
+                            <label>descText:
+                                <input class="editInput" id="c101_descText" onblur="userAutoSaveMe('c101');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c101_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c101 -->
+
+
+                    <section id="edit_c102" class="editSection edit_c102 hideme" data-templateId="c102">
+                        <div>c102</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c102_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>preset:
+                                <select class="editSelect" id="c102_presetDD" onchange="userHandlePreset('c102');">
+                                    <option value="unum_logo-white_bg-color">unum_logo-white_bg-color</option>
+                                    <option value="colonial_logo-white_bg-color">colonial_logo-white_bg-color</option>
+                                    <option value="unum_logo-color_bg-white">unum_logo-color_bg-white</option>
+                                    <option value="colonial_logo-color_bg-white">colonial_logo-color_bg-white</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup hideme">
+                            <label>backgroundColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c102_backgroundColor" onblur="userAutoSaveMe('c102');" data-savetarget="c102" />
+                                    <button type="button" id="c102_backgroundColorCP" class="cpTooltip" value="c102_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoUrl*:
+                                <input class="editInput" id="c102_logoUrl" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoSrc*:
+                                <input class="editInput" id="c102_logoSrc" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltText*:
+                                <input class="editInput" id="c102_logoAltText" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c102_logoAltTextColor" onblur="userAutoSaveMe('c102');" data-savetarget="c102" />
+                                    <button type="button" id="c102_logoAltTextColorCP" class="cpTooltip" value="c102_logoAltTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>headerbarColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c102_headerbarColor" onblur="userAutoSaveMe('c102');" data-savetarget="c102" />
+                                    <button type="button" id="c102_headerbarColorCP" class="cpTooltip" value="c102_headerbarColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>descTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c102_descTextColor" onblur="userAutoSaveMe('c102');" data-savetarget="c102" />
+                                    <button type="button" id="c102_descTextColorCP" class="cpTooltip" value="c102_descTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>ctaTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c102_ctaTextColor" onblur="userAutoSaveMe('c102');" data-savetarget="c102" />
+                                    <button type="button" id="c102_ctaTextColorCP" class="cpTooltip" value="c102_ctaTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup">
+                            <label>descText:
+                                <input class="editInput" id="c102_descText" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaUrl:</div> 
+                                    <div>leave blank to make link plain text</div>
+                                </div>
+                                <input class="editInput" id="c102_ctaUrl" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaText:</div> 
+                                    <div>leave blank to remove cta</div>
+                                </div>
+                                <input class="editInput" id="c102_ctaText" onblur="userAutoSaveMe('c102');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c102_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c102 -->
+
+
+                    <section id="edit_c104" class="editSection edit_c104 hideme" data-templateId="c104">
+                        <div>c104</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c104_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>preset:
+                                <select class="editSelect" id="c104_presetDD" onchange="userHandlePreset('c104');">
+                                    <option value="paulrevere_logo-white_bg-color">paulrevere_logo-white_bg-color</option>
+                                    <option value="paulrevere_logo-color_bg-white">paulrevere_logo-color_bg-white</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup hideme">
+                            <label>backgroundColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c104_backgroundColor" onblur="userAutoSaveMe('c104');" data-savetarget="c104" />
+                                    <button type="button" id="c104_backgroundColorCP" class="cpTooltip" value="c104_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoUrl*:
+                                <input class="editInput" id="c104_logoUrl" onblur="userAutoSaveMe('c104');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoSrc*:
+                                <input class="editInput" id="c104_logoSrc" onblur="userAutoSaveMe('c104');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltText*:
+                                <input class="editInput" id="c104_logoAltText" onblur="userAutoSaveMe('c104');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>logoAltTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c104_logoAltTextColor" onblur="userAutoSaveMe('c104');" data-savetarget="c104" />
+                                    <button type="button" id="c104_logoAltTextColorCP" class="cpTooltip" value="c104_logoAltTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="inputGroup hideme">
+                            <label>ctaTextColor*:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c104_ctaTextColor" onblur="userAutoSaveMe('c104');" data-savetarget="c104" />
+                                    <button type="button" id="c104_ctaTextColorCP" class="cpTooltip" value="c104_ctaTextColor"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- hidden by default (controlled by preset) -->
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaUrl:</div> 
+                                    <div>leave blank to make link plain text</div>
+                                </div>
+                                <input class="editInput" id="c104_ctaUrl" onblur="userAutoSaveMe('c104');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>
+                                <div class="flexlabel">
+                                    <div>ctaText:</div> 
+                                    <div>leave blank to remove cta</div>
+                                </div>
+                                <input class="editInput" id="c104_ctaText" onblur="userAutoSaveMe('c104');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c104_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c104 -->
+
+                    <section id="edit_c154s" class="editSection edit_c154s hideme" data-templateId="c154s">
+                        <div>c154s</div>
+                        <br>
+                        <div class="inputGroup editDeleteButtonContainer">
+                            <button class="editBtn editBtn--delete" id="c154s_deleteBtn" onclick="userEditDelete()" type="button">Delete</button>
+                        </div>
+                        <div class="inputGroup">
+                            <label>spacerTop:
+                                <input type="number" min="0" class="editInput" id="c154s_spacerTop" onblur="userBlankTo0(this);userAutoSaveMe('c154s');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup">
+                            <label>backgroundColor:
+                                <div class="colorboxFlex">
+                                    <input class="editInput bgColorInput" id="c154s_backgroundColor" onblur="userAutoSaveMe('c154s');" data-savetarget="c154s" />
+                                    <button type="button" id="c154s_backgroundColorCP" class="cpTooltip" value="c154s_backgroundColor"></button>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="inputGroup">
+                            <div>
+                                <select id="addSubCompSelect_c154s">
+                                    <option value="sub1">sub1</option>
+                                    <option value="sub2">sub2</option>
+                                    <option value="sub3">sub3</option>
+                                </select>
+                                <button type="button" onclick="addSubCompBtnClick('c154s')">add</button>
+                            </div>
+        
+                            <div id="subCompRenderLocation_c154s" class="subComponentFieldArea"></div>
+                        </div>
+                        <div class="inputGroup">
+                            <label>subComponentUI:
+                                <textarea cols="80" rows="10" class="editInput" id="c154s_subComponentUI" onblur="userAutoSaveMe('c154s');"></textarea>
+                            </label>
+                        </div>
+                        <!-- <div class="inputGroup">
+                            <div class="subcompPreviewListContainer">
+                                <label class="subcompListItemLabel">
+                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem0">
+                                    <div id="subcompListItem0_preview">-</div>
+                                </label>
+                                <label class="subcompListItemLabel">
+                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem1">
+                                    <div id="subcompListItem1_preview">-</div>
+                                </label>
+                                <label class="subcompListItemLabel">
+                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem2">
+                                    <div id="subcompListItem2_preview">-</div>
+                                </label>
+                            </div>
+                            <div class="subcomponentUIContainer">
+                                <div class="subcompUI-col subcompUI-col1">
+                                    <select id="subEdit_c154s_LeftSelect" class="multi-select" size="12">
+                                        <option value="h1">h1</option>
+                                        <option value="h2">h2</option>
+                                        <option value="icon">icon</option>
+                                        <option value="p">p</option>
+                                        <option value="cta">cta</option>
+                                        <option value="spacer">spacer</option>
+                                        <option value="link">link</option>
+                                        <option value="email">email (202d)</option>
+                                        <option value="phone">phone (202d)</option>
+                                        <option value="bullet">bullet (205)</option>
+                                        <option value="icon_bullet">icon_bullet (205e)</option>
+                                    </select>
+                                    <div class="subEdit_c154s_LeftSelectControls">
+                                        <button id="subEdit_154s_previewBtn">Preview</button>
+                                    </div>
+                                </div>
+                                <div class="subcompUI-col subcompUI-col2">
+                                    <button id="subEdit_c154s_goRightBtn" onclick="subPopulatePreviews();">&gt;</button>
+                                </div>
+                                <div class="subcompUI-col subcompUI-col3">
+                                    <select id="subEdit_c154s_RightSelect" class="multi-select" size="12">
+                                    </select>
+                                    <div class="subEdit_c154s_RightSelectControls">
+                                        <button id="subEdit_154s_goUpBtn">Up</button>
+                                        <button id="subEdit_154s_goDownBtn">Dn</button>
+                                        <button id="subEdit_154s_goDeleteBtn">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inputGroup">
+                            <label>subComponentUI:<input class="editInput" id="c154s_subComponentUI" onblur="userAutoSaveMe('c154s');" /></label>
+                        </div> -->
+                        <div class="inputGroup">
+                            <label>spacerBottom:
+                                <input type="number" min="0" class="editInput" id="c154s_spacerBottom" onblur="userBlankTo0(this);userAutoSaveMe('c154s');" />
+                            </label>
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="c154s_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                    </section><!-- end c154s -->
+
+                    
+
+                </section><!-- end leftEditView -->
+
+            </section><!-- /left -->
+
+            <section class="right" onclick="userEmptyRightClicked();">
+
+                <div id="draggableContainer">
+                    <!-- <div id="draggable0" class="draggable" draggable="true">dragme0</div>
+                    <div id="draggable1" class="draggable" draggable="true">dragme1</div>
+                    <div id="draggable2" class="draggable" draggable="true">dragme2</div> -->
+                </div>
+
+                <div id="emailCodeDiv"></div>
+
+
+                <section class="deleteArea">
+                        <div id="dropzoneDelete" data-order="-2" class="dropzone dropzone--delete hideme">
+                            <img src="./images/delete.svg" class="ui-icon ui-icon--delete avoid-clicks"> <!-- there needs to be a child element in here for DnD to work -->
+                        </div>
+                </section>
+            </section><!-- /right -->
+
+        </section><!-- /bottom -->
+    </div><!-- /page -->
+
+
+
+
+
+    <div class="tooltip_templates hideme">
+        <span id="tooltip_content_all">
+            <div id="myTemplate" class="myColorPicker">
+                <div class="myColorPickerColorRow colorPickerRowUnum">
+                    <button type="button" class="bg-unum-blue" value="#015294" title="unum-blue" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-unum-slate" value="#5A7184" title="unum-slate" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-unum-pool" value="#47B4BC" title="unum-pool" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-unum-gold" value="#FAC832" title="unum-gold" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-unum-lawn" value="#8CC442" title="unum-lawn" onclick="userPickColor(this)">&nbsp;</button>
+                    <!-- <button type="button" class="bg-unum-sky" value="#0376bb" title="unum-sky" onclick="userPickColor(this)">&nbsp;</button> 
+                    <button type="button" class="bg-unum-sand" value="#CCBD8F" title="unum-sand" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-unum-sand-dark" value="#BEA97D" title="unum-sand-dark" onclick="userPickColor(this)">&nbsp;</button>-->
+                    <!-- <button type="button" class="bg-unum-dark-grey" value="#2E2E2E" title="unum-dark-grey" onclick="userPickColor(this)">&nbsp;</button> -->
+                </div>
+                <div class="myColorPickerColorRow myColorPickerColorRow--middle">
+                    <button type="button" class="bg-white" value="white" title="white" onclick="userPickColor(this)">&nbsp;</button>
+                    <!-- <button type="button" class="bg-black" value="black" title="black" onclick="userPickColor(this)">&nbsp;</button> -->
+                    <button type="button" class="bg-neutral-dark-grey" value="#2E2E2E" title="dark-grey" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-neutral-light-grey-3" value="#E9E9E9" title="light-grey-light-3" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-neutral-light-grey-4" value="#F7F7F7" title="light-grey-light-4" onclick="userPickColor(this)">&nbsp;</button>
+                </div>
+                <div class="myColorPickerColorRow colorPickerRowColonial hideme">
+                    <button type="button" class="bg-colonial-steel-blue" value="#19557F" title="colonial-steel-blue" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-slate" value="#5B7183" title="colonial-slate" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-mint" value="#1A8573" title="colonial-mint" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-leaf" value="#78B25D" title="colonial-leaf" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-ocean" value="#3BAECC" title="colonial-ocean" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-asparagus" value="#A4CC44" title="colonial-asparagus" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-tangerine" value="#F1C44F" title="colonial-tangerine" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-pumpkin" value="#F38130" title="colonial-pumpkin" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-dark-red" value="#7F2725" title="colonial-dark-red" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-sand" value="#E0DDCE" title="colonial-sand" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-moss" value="#537650" title="colonial-moss" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-grape" value="#5F3A6C" title="colonial-sand" onclick="userPickColor(this)">&nbsp;</button>
+                    <!-- <button type="button" class="bg-colonial-steel-blue-light" value="#ADC5D5" title="colonial-steel-blue-light" onclick="userPickColor(this)">&nbsp;</button>
+                    <button type="button" class="bg-colonial-dark-grey" value="#2E2E2E" title="colonial-dark-grey" onclick="userPickColor(this)">&nbsp;</button> -->
+                </div>
+            </div>
+        </span>
+    </div>
+    
+
+
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="vendor/tooltipster/tooltipster.bundle.min.js"></script>
+    <script src="./jsCode/userEvents.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.cpTooltip').tooltipster({
+                content: $('#tooltip_content_all'),
+                theme: 'tooltipster-noir',
+                contentCloning: true,
+                interactive: true,
+                triggerOpen: 0,
+                trigger: 'click'
+            });
+    
+            $('.cpTooltip').click(function () {
+                main.colorPickerInputId = this.value
+                main.colorPickerId = this.id
+            })
+
+            // Let the document know when the mouse is being used
+            document.body.addEventListener('mousedown', function() {
+                document.body.classList.add('using-mouse');
+            });
+            document.body.addEventListener('keydown', function() {
+                document.body.classList.remove('using-mouse');
+            });
+        });
+    </script>
+</body>
+</html>
