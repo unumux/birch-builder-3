@@ -26,7 +26,8 @@ let main = {
     selectedComp: null, // a quick reference to the comp which is being edited
     colorPickerInputId: null, // used during clicker picking to know what to target with the selected color
     colorPickerId: null,
-    subcomponentArray: []
+    subcomponentArray: [],
+    subtarget: null // used for tracking which subcomp to update when clicking on a color button.  saved at addSubCompBtnClick, used at userPickColor
 }
 
 function mainAddCompByTemplateId(templateId){

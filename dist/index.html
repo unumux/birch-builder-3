@@ -590,8 +590,9 @@
                                     <option value="sub1">sub1</option>
                                     <option value="sub2">sub2</option>
                                     <option value="sub3">sub3</option>
+                                    <option value="subh1">subh1</option>
                                 </select>
-                                <button type="button" onclick="addSubCompBtnClick('c154s')">add</button>
+                                <button type="button" class="editBtn" onclick="addSubCompBtnClick('c154s')">add</button>
                             </div>
         
                             <div id="subCompRenderLocation_c154s" class="subComponentFieldArea"></div>
@@ -753,6 +754,8 @@
             });
     
             $('.cpTooltip').click(function () {
+                console.log('cpTooltip clicked');
+                
                 main.colorPickerInputId = this.value
                 main.colorPickerId = this.id
             })

@@ -299,6 +299,8 @@ function userEditDelete(){
 }
 
 function userPickColor(el){
+    console.log('welcome to userPickColor(el)...el:',el);
+    
     let selectedColor = el.value
     let targetInputEl = document.querySelector('#'+main.colorPickerInputId)
     targetInputEl.value = selectedColor
@@ -308,6 +310,7 @@ function userPickColor(el){
     // this is to auto-save without needing to click the save button
     if (targetInputEl.dataset.savetarget){ // not null, undefined, etc.
         userAutoSaveMe(targetInputEl.dataset.savetarget)
+        userSaveSub(main.subtarget)
     }
 }
 function userAutoSaveMe(target){
