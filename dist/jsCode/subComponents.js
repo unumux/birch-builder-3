@@ -242,4 +242,21 @@ function addedSubCompDelete(recCompName, recSubToDeleteIndex){
 
     document.getElementById(`${main.selectedComp.template}_subComponentUI`).value = allMergedSubcomponentsCode
     userEditSave() // now save to update the email with the merged code of the subcomp
+
+    // attach tooltipster to any newly created color buttons
+    $('.cpTooltip').tooltipster({
+        content: $('#tooltip_content_all'),
+        theme: 'tooltipster-noir',
+        contentCloning: true,
+        interactive: true,
+        triggerOpen: 0,
+        trigger: 'click'
+    });
+    $('.cpTooltip').click(function () {
+        console.log('cpTooltip...this:',this);
+        
+        main.colorPickerInputId = this.value
+        main.colorPickerId = this.id
+        main.subtarget = this.dataset.subtarget
+    })
 }
