@@ -585,74 +585,31 @@
                         </div>
 
                         <div class="inputGroup">
-                            <div>
-                                <select id="addSubCompSelect_c154s">
-                                    <option value="sub1">sub1</option>
-                                    <option value="sub2">sub2</option>
-                                    <option value="sub3">sub3</option>
-                                    <option value="subh1">subh1</option>
-                                </select>
-                                <button type="button" class="editBtn" onclick="addSubCompBtnClick('c154s')">add</button>
-                            </div>
-        
+                            <label>
+                                <div class="flexlabel">
+                                    <div>sub-components:</div> 
+                                    <div>choose then add</div>
+                                </div>
+                                <div>
+                                    <select id="addSubCompSelect_c154s">
+                                        <option value="sub1">sub1</option>
+                                        <option value="sub2">sub2</option>
+                                        <option value="sub3">sub3</option>
+                                        <option value="subh1">heading1 (h1)</option>
+                                        <option value="subh2">heading2 (h2)</option>
+                                        <option value="subp">paragraph (p)</option>
+                                    </select>
+                                    <button type="button" class="editBtn" onclick="addSubCompBtnClick('c154s')">add</button>
+                                </div>
+                            </label>
                             <div id="subCompRenderLocation_c154s" class="subComponentFieldArea"></div>
                         </div>
-                        <div class="inputGroup">
+                        <div class="inputGroup hideme">
                             <label>subComponentUI:
                                 <textarea cols="80" rows="10" class="editInput" id="c154s_subComponentUI" onblur="userAutoSaveMe('c154s');"></textarea>
                             </label>
                         </div>
-                        <!-- <div class="inputGroup">
-                            <div class="subcompPreviewListContainer">
-                                <label class="subcompListItemLabel">
-                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem0">
-                                    <div id="subcompListItem0_preview">-</div>
-                                </label>
-                                <label class="subcompListItemLabel">
-                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem1">
-                                    <div id="subcompListItem1_preview">-</div>
-                                </label>
-                                <label class="subcompListItemLabel">
-                                    <input type="radio" name="subcomplist" class="subcompListItem" id="subcompListItem2">
-                                    <div id="subcompListItem2_preview">-</div>
-                                </label>
-                            </div>
-                            <div class="subcomponentUIContainer">
-                                <div class="subcompUI-col subcompUI-col1">
-                                    <select id="subEdit_c154s_LeftSelect" class="multi-select" size="12">
-                                        <option value="h1">h1</option>
-                                        <option value="h2">h2</option>
-                                        <option value="icon">icon</option>
-                                        <option value="p">p</option>
-                                        <option value="cta">cta</option>
-                                        <option value="spacer">spacer</option>
-                                        <option value="link">link</option>
-                                        <option value="email">email (202d)</option>
-                                        <option value="phone">phone (202d)</option>
-                                        <option value="bullet">bullet (205)</option>
-                                        <option value="icon_bullet">icon_bullet (205e)</option>
-                                    </select>
-                                    <div class="subEdit_c154s_LeftSelectControls">
-                                        <button id="subEdit_154s_previewBtn">Preview</button>
-                                    </div>
-                                </div>
-                                <div class="subcompUI-col subcompUI-col2">
-                                    <button id="subEdit_c154s_goRightBtn" onclick="subPopulatePreviews();">&gt;</button>
-                                </div>
-                                <div class="subcompUI-col subcompUI-col3">
-                                    <select id="subEdit_c154s_RightSelect" class="multi-select" size="12">
-                                    </select>
-                                    <div class="subEdit_c154s_RightSelectControls">
-                                        <button id="subEdit_154s_goUpBtn">Up</button>
-                                        <button id="subEdit_154s_goDownBtn">Dn</button>
-                                        <button id="subEdit_154s_goDeleteBtn">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inputGroup">
-                            <label>subComponentUI:<input class="editInput" id="c154s_subComponentUI" onblur="userAutoSaveMe('c154s');" /></label>
-                        </div> -->
+
                         <div class="inputGroup">
                             <label>spacerBottom:
                                 <input type="number" min="0" class="editInput" id="c154s_spacerBottom" onblur="userBlankTo0(this);userAutoSaveMe('c154s');" />

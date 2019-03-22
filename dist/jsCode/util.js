@@ -59,3 +59,8 @@ function utilGetAllComponentsWithTag(theTagToFind){
     // console.log(arrayOfCompsThatHaveTheTag);
     return arrayOfCompsThatHaveTheTag
 }
+function blankTo0(guy){
+    if (guy.value === ''){
+        guy.value = 0;
+    }
+}

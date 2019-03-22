@@ -86,7 +86,6 @@ function generateSubFormFields(subname, guid, subcount){
                                     </label>
                                 </div>
 
-                                
                                 <div class="inputGroup">
                                     <label>
                                         <div>text:</div>
@@ -95,7 +94,7 @@ function generateSubFormFields(subname, guid, subcount){
                                 </div>
 
                                 <div class="inputGroup">
-                                    <div class="label">h1Align:
+                                    <div class="label">align:
                                         <div class="alignRadioFlex">
                                             <label><input type="radio" name="subh1_textAlignRadio" value="left" data-target="form_align_subh1_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)">left</label>
                                             <label><input type="radio" name="subh1_textAlignRadio" value="center" data-target="form_align_subh1_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)" checked="checked">center</label>
@@ -105,11 +104,105 @@ function generateSubFormFields(subname, guid, subcount){
                                     </div>
                                 </div>
 
-                                
+                                <div class="inputGroup">
+                                    <label>
+                                        <div>marginBottom:</div>
+                                        <input type="number" min="0" id="form_marginBottom_subh1_compid${guid}_subcount${subcount}" class="editInput" onblur="blankTo0(this);userSaveSub('subh1');">
+                                    </label>
+                                </div>
+
                             </div>
                             <div class="inputGroup editApplyButtonContainer hideme">
                                 <button class="editBtn" id="subh1_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
                             </div>
+                        </fieldset>`
+
+    const subh2form =   `<fieldset><legend>subh2 [up] [dn] <button onclick="addedSubCompDelete('${subname}', ${subcount})">delete</button></legend>
+                        <div id="formTemplate_subh2_compid${guid}_subcount${subcount}">
+
+                            <div class="inputGroup">
+                                <label>color:
+                                    <div class="colorboxFlex">
+                                        <input class="editInput bgColorInput" id="form_color_subh2_compid${guid}_subcount${subcount}" onblur="userSaveSub('subh2');" data-savetarget="subh2" />
+                                        <button type="button" id="form_color_subh2_compid${guid}_subcount${subcount}CP" class="cpTooltip tooltipstered" value="form_color_subh2_compid${guid}_subcount${subcount}" data-subTarget="subh2"></button>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="inputGroup">
+                                <label>
+                                    <div>text:</div>
+                                    <input id="form_text_subh2_compid${guid}_subcount${subcount}" onblur="userSaveSub('subh2');">
+                                </label>
+                            </div>
+
+                            <div class="inputGroup">
+                                <div class="label">align:
+                                    <div class="alignRadioFlex">
+                                        <label><input type="radio" name="subh2_textAlignRadio" value="left" data-target="form_align_subh2_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)">left</label>
+                                        <label><input type="radio" name="subh2_textAlignRadio" value="center" data-target="form_align_subh2_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)" checked="checked">center</label>
+                                        <label><input type="radio" name="subh2_textAlignRadio" value="right" data-target="form_align_subh2_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)">right</label>
+                                    </div>
+                                    <input class="editInput hideme" id="form_align_subh2_compid${guid}_subcount${subcount}" onblur="userSaveSub('subh2');" />
+                                </div>
+                            </div>
+
+                            <div class="inputGroup">
+                                <label>
+                                    <div>marginBottom:</div>
+                                    <input type="number" min="0" id="form_marginBottom_subh2_compid${guid}_subcount${subcount}" class="editInput" onblur="blankTo0(this);userSaveSub('subh2');">
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="subh2_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
+                        </fieldset>`
+
+    const subpform =   `<fieldset><legend>subp [up] [dn] <button onclick="addedSubCompDelete('${subname}', ${subcount})">delete</button></legend>
+                        <div id="formTemplate_subp_compid${guid}_subcount${subcount}">
+
+                            <div class="inputGroup">
+                                <label>color:
+                                    <div class="colorboxFlex">
+                                        <input class="editInput bgColorInput" id="form_color_subp_compid${guid}_subcount${subcount}" onblur="userSaveSub('subp');" data-savetarget="subp" />
+                                        <button type="button" id="form_color_subp_compid${guid}_subcount${subcount}CP" class="cpTooltip tooltipstered" value="form_color_subp_compid${guid}_subcount${subcount}" data-subTarget="subp"></button>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="inputGroup">
+                                <label>
+                                    <div>text:</div>
+                                    <input id="form_text_subp_compid${guid}_subcount${subcount}" onblur="userSaveSub('subp');">
+                                </label>
+                            </div>
+
+                            <div class="inputGroup">
+                                <div class="label">align:
+                                    <div class="alignRadioFlex">
+                                        <label><input type="radio" name="subp_textAlignRadio" value="left" data-target="form_align_subp_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)">left</label>
+                                        <label><input type="radio" name="subp_textAlignRadio" value="center" data-target="form_align_subp_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)" checked="checked">center</label>
+                                        <label><input type="radio" name="subp_textAlignRadio" value="right" data-target="form_align_subp_compid${guid}_subcount${subcount}" onclick="userSetRadio(this)">right</label>
+                                    </div>
+                                    <input class="editInput hideme" id="form_align_subp_compid${guid}_subcount${subcount}" onblur="userSaveSub('subp');" />
+                                </div>
+                            </div>
+
+                            <div class="inputGroup">
+                                <label>
+                                    <div>marginBottom:</div>
+                                    <input type="number" min="0" id="form_marginBottom_subp_compid${guid}_subcount${subcount}" class="editInput" onblur="blankTo0(this);userSaveSub('subp');">
+                                </label>
+                            </div>
+
+                            
+
+                        </div>
+                        <div class="inputGroup editApplyButtonContainer hideme">
+                            <button class="editBtn" id="subp_applyBtn" onclick="userEditSave()" type="button">Apply &rsaquo;</button>
+                        </div>
                         </fieldset>`
     
     return(eval(`${subname}form`))

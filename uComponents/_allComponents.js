@@ -11,9 +11,11 @@ let sub1 = require('./sub1')
 let sub2 = require('./sub2')
 let sub3 = require('./sub3')
 let subh1 = require('./subh1')
+let subh2 = require('./subh2')
+let subp = require('./subp')
 
 // don't forget to also add them to the combo destructuring statement:
-let combo = { ...c090, ...c100, ...c101, ...c102, ...c104, ...c154s, ...sub1, ...sub2, ...sub3, ...subh1 };
+let combo = { ...c090, ...c100, ...c101, ...c102, ...c104, ...c154s, ...sub1, ...sub2, ...sub3, ...subh1, ...subh2, ...subp };
 
 
 let comboString = `let megaComponentObject = ${JSON.stringify(combo)}`
